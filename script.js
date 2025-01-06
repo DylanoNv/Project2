@@ -60,43 +60,89 @@ const rekeningen = [
     { naam: "Betaalrekening", saldo: 250 },
 ];
 
-function toonRekeningen() {
-    const overzicht = document.getElementById("rekening-overzicht");
-    overzicht.innerHTML = "";
+// Functie om de dropdowns te vullen
+function populateDropdowns() {
+    const fromAccountDropdown = document.getElementById("fromAccount");
+    const toAccountDropdown = document.getElementById("toAccount");
+
+    // Reset de dropdowns
+    fromAccountDropdown.innerHTML = '<option value="">Selecteer een rekening</option>';
+    toAccountDropdown.innerHTML = '<option value="">Selecteer een rekening</option>';
 
     rekeningen.forEach((rekening, index) => {
+        const optionFrom = document.createElement("option");
+        optionFrom.value = index;
+        optionFrom.textContent = `${rekening.naam} (€${rekening.saldo.toFixed(2)})`;
+        fromAccountDropdown.appendChild(optionFrom);
+
+        const optionTo = document.createElement("option");
+        optionTo.value = index;
+        optionTo.textContent = `${rekening.naam} (€${rekening.saldo.toFixed(2)})`;
+        toAccountDropdown.appendChild(optionTo);
+    });
+}
+
+// Functie om het overzicht van rekeningen te tonen
+function toonRekeningen() {
+    const overzicht = document.getElementById("rekening-overzicht");
+    overzicht.innerHTML = ""; // Reset het overzicht
+
+    rekeningen.forEach((rekening) => {
         const rekeningDiv = document.createElement("div");
         rekeningDiv.classList.add("rekening");
         rekeningDiv.innerHTML = `
             <p>${rekening.naam}</p>
             <p>Saldo: €${rekening.saldo.toFixed(2)}</p>
-            <button onclick="verwijderRekening(${index})">Verwijderen</button>
         `;
         overzicht.appendChild(rekeningDiv);
     });
 }
 
-function verwijderRekening(index) {
-    if (index >= 0 && index < rekeningen.length) {
-        rekeningen.splice(index, 1);
-        toonRekeningen();
-    } else {
-        console.error("Ongeldige index:", index);
-    }
-}
-
-
-window.onload = toonRekeningen;
-
-document.getElementById("nieuwe-rekening-form").addEventListener("submit", function (event) {
+// Functie om een transactie uit te voeren
+document.getElementById("transferForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const naam = document.getElementById("rekening-naam").value;
-    const saldo = parseFloat(document.getElementById("start-saldo").value);
+    const fromAccountIndex = parseInt(document.getElementById("fromAccount").value);
+    const toAccountIndex = parseInt(document.getElementById("toAccount").value);
+    const amount = parseFloat(document.getElementById("amount").value);
 
-    if (naam && !isNaN(saldo)) {
-        rekeningen.push({ naam, saldo });
-        toonRekeningen();
-        document.getElementById("nieuwe-rekening-form").reset();
+    if (isNaN(fromAccountIndex) || isNaN(toAccountIndex)) {
+        alert("Selecteer een geldige rekening.");
+        return;
     }
+
+    if (fromAccountIndex === toAccountIndex) {
+        alert("Van rekening en naar rekening mogen niet hetzelfde zijn!");
+        return;
+    }
+
+    if (amount <= 0) {
+        alert("Voer een geldig bedrag in!");
+        return;
+    }
+
+    const fromAccount = rekeningen[fromAccountIndex];
+    const toAccount = rekeningen[toAccountIndex];
+
+    if (amount > fromAccount.saldo) {
+        alert("Onvoldoende saldo!");
+        return;
+    }
+
+    fromAccount.saldo -= amount;
+    toAccount.saldo += amount;
+
+    const messageContainer = document.createElement("div");
+    messageContainer.textContent = `€${amount.toFixed(2)} is succesvol overgeschreven van ${fromAccount.naam} naar ${toAccount.naam}`;
+    messageContainer.style.color = "green";
+    document.body.appendChild(messageContainer);
+
+    populateDropdowns(); // Update de dropdowns
+    toonRekeningen(); // Update het saldo-overzicht
 });
+
+// Initialiseer dropdowns en saldo-overzicht bij het laden van de pagina
+window.onload = function () {
+    populateDropdowns();
+    toonRekeningen();
+};

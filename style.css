@@ -230,10 +230,82 @@ form input {
 form button {
   width: 100%;
   padding: 10px;
-  background-color: blue;
+  background-color: #ccc;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+#overboek-form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #333;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#overboek-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+#overboek-form-container label {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  text-align: left;
+}
+
+#overboek-form-container input,
+#overboek-form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#overboek-form-container button {
+  padding: 10px;
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#overboek-form-container button:hover {
+  background-color: #0056b3;
+}
+
+.succes-message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+  text-align: center;
 }
