@@ -7,22 +7,42 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="rekeningenpage.html">Rekeningen</a></li>
-            <li><a href="aandelenpage.html">Aandelen</a></li>
-            <li><a href="inloggenpage.html">Inloggen</a></li>
-        </ul>
-    </nav>    
-        <section id="home">Welkom bij de bank van de toekomst!</section>
-        <section id="rekeningen" class="active">Hier kunt u uw rekeningen bekijken.</section>
-        <section id="aandelen">Hier kunt u uw aandelen bekijken.</section>
-        <section id="inloggen">Hier kunt u inloggen.</section>
-            <footer>
-                <a href="https://www.techniekcollegerotterdam.nl">Techniek College Rotterdam</a>
-            </footer>
-            <Center><h1>Rekeningen</h1></Center>
-            <script src="script.js"></script>
-        </body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo"/>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="rekeningenpage.html">Rekeningen</a></li>
+                <li><a href="aandelenpage.html">Aandelen</a></li>
+                <li><a href="inloggenpage.html">Inloggen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <section id="rekeningen">
+    <h2>Overzicht van uw rekeningen</h2>
+    <div id="rekening-overzicht">
+    </div>
+    <h3>Nieuwe rekening aanmaken</h3>
+    <form id="nieuwe-rekening-form">
+        <label for="rekening-naam">Rekeningnaam:</label>
+        <input type="text" id="rekening-naam" required>
+        
+        <label for="start-saldo">Startsaldo:</label>
+        <input type="number" id="start-saldo" required>
+
+        <button type="submit">Toevoegen</button>
+    </form>
+
+</section>
+    <footer>
+        <a href="https://www.techniekcollegerotterdam.nl">Techniek College Rotterdam</a>
+    </footer>
+
+    <h1 style="text-align: center; margin-top: 30px;">Welkom bij de bank van de toekomst!</h1>
+
+    <script src="script.js"></script>
+</body>
 </html>

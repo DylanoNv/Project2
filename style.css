@@ -1,151 +1,239 @@
 body {
-    background-image: url('./img/websiteachtergrond.png');
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-size: 100% 100%;
-    }
-    nav {
-        display: flex;
-        width: 100%;
-        padding: 1rem;
-        min-height: 10vh;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: auto;
-        background: gray;
-        justify-content: center;
-      }
-      
-      nav ul {
-        display: flex;
-        list-style-type: none;
-        margin: 0 auto;
-      }
-      
-      nav li {
-        font-size: 2.5rem;
-        padding: 0 2rem;
-      }
-      
-      nav a {
-        color: black;
-        text-decoration: none;
-        font-style: oblique;
-        font-weight: bolder;
-        text-align: center;
-      }
-      
-      nav img {
-        width: 20vh;
-      }
-    
-      footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: gray;
-        text-align: center;
-        font-size: 34px;
-        padding: 10px 0;
-        box-sizing: border-box;
-        color: black;
-       }
-    
-       footer a {
-        color: black;
-        text-decoration: none;
-       }
-    
-        h1 {
-            color: black;
-            font-weight: bolder;
-            font-size: 3rem;
-        }
-    
-        .image-container img {
-          max-width:max-content;
-          height: max-content;
-          margin-left: 750px;
-          position: relative;
-          bottom: 300px;
-      }
-        
-      section {
-        display: block;
-        color: lightgrey;
-    }
-    
-    section.active {
-        display: block;
-    }    
-    
-    #content {
-        margin: 20px;
-    }
-    
-    .login-form {
-      background-color: whitesmoke;
-      border-radius: 10px;
-      padding: 2rem;
-      width: 300px;
-      margin: auto;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+  background-image: url('./img/websiteachtergrond.png');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  background-position: center;
+  background-color: #333;
+  font-family: Arial, sans-serif;
+  color: #000;
+  margin: 0;
+}
 
-    .login-form h2 {
-      color: black;
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
+header {
+  display: flex;
+  align-items: center;
+  background-color: #27282a;
+  padding: 10px 20px;
+  height: 90px;
+}
 
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 
-    .form-group label {
-      display: block;
-      font-size: 1.2rem;
-      color: black;
-      margin-bottom: 0.5rem;
-    }
+.logo img {
+  height: 100px;
+  width: auto;
+}
 
-    .form-group input {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 1rem;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #27282a;
+  padding: 1rem;
+}
 
-    .form-group input:focus {
-      border-color: blue;
-      outline: none;
-    }
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  gap: 20px;
+}
 
-    .form-group button {
-      width: 100%;
-      padding: 1rem;
-      background-color: blue;
-      color: white;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+nav li {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: bold;
+}
 
-    .error-message {
-      color: red;
-      text-align: center;
-      font-size: 1rem;
-      display: none;
-      margin-top: 1rem;
-    }
+nav a {
+  color: #a9a9a9;
+  text-decoration: none;
+  font-style: oblique;
+  font-weight: lighter;
+  text-align: center;
+}
 
-    @media (max-width: 768px) {
-      .login-form {
-        width: 80%;
-      }
-    }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #27282a;
+  text-align: center;
+  font-size: 34px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+footer a {
+  color: #a9a9a9;
+  text-decoration: none;
+}
+
+h1 {
+  color: #a9a9a9;
+  font-weight: lighter;
+  font-size: 3rem;
+}
+
+.image-container img {
+  max-width:max-content;
+  height: max-content;
+  margin-left: 750px;
+  position: relative;
+  bottom: 300px;
+}
+
+section {
+  display: block;
+  color: lightgrey;
+}
+
+section.active {
+  display: block;
+}
+
+#content {
+  margin: 20px;
+}
+
+.login-form {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  color: black;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: blue;
+  outline: none;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 1rem;
+  background-color: blue;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 1rem;
+  display: none;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .login-form {
+      width: 80%;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#rekeningen {
+  padding: 20px;
+  background-color:#27282a;
+  color: #a9a9a9;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+}
+
+#rekening-overzicht {
+  margin-bottom: 20px;
+}
+
+.rekening {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.rekening button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
