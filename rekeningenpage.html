@@ -51,11 +51,26 @@
         </form>
         <div id="succesMessage" class="succes-message" style="display: none;"></div>
     </div>
-    
-    
-
-
-
+    <div class="transactions-section">
+        <h2>Transactiegeschiedenis</h2>
+      
+        <label for="sorteren">Sorteer op:</label>
+        <select id="sorteren">
+          <option value="datum">Datum</option>
+          <option value="type">Type</option>
+        </select>
+        <table class="transactions-table">
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Type</th>
+              <th>Bedrag</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-table-body">
+          </tbody>
+        </table>
+    </div>
 </section>
     <footer>
         <a href="https://www.techniekcollegerotterdam.nl">Techniek College Rotterdam</a>
