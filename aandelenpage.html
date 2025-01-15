@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Aandelen</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="rekeningenpage.html">Rekeningen</a></li>
+            <li><a href="aandelenpage.html">Aandelen</a></li>
+            <li><a href="inloggenpage.html">Inloggen</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <h1>Investeren in Aandelen</h1>
+        <div class="stocks">
+            <section class="stock-item">
+                <h2>Fent & Co</h2>
+                <p>Huidige prijs: €<span class="price">120.50</span></p>
+                <form class="investment-form">
+                    <label for="tech-quantity">Aantal aandelen:</label>
+                    <input type="number" id="tech-quantity" min="1" placeholder="Aantal">
+                    <button type="button" class="buy-btn">Koop</button>
+                    <button type="button" class="sell-btn">Verkoop</button>
+                </form>
+            </section>
+            <section class="stock-item">
+                <h2>TCR-500</h2>
+                <p>Huidige prijs: €<span class="price">89.20</span></p>
+                <form class="investment-form">
+                    <label for="green-quantity">Aantal aandelen:</label>
+                    <input type="number" id="green-quantity" min="1" placeholder="Aantal">
+                    <button type="button" class="buy-btn">Koop</button>
+                    <button type="button" class="sell-btn">Verkoop</button>
+                </form>
+            </section>
+            <section class="stock-item">
+                <h2>RTC Coin</h2>
+                <p>Huidige prijs: €<span class="price">45,000.00</span></p>
+                <form class="investment-form">
+                    <label for="crypto-quantity">Aantal crypto's:</label>
+                    <input type="number" id="crypto-quantity" min="1" placeholder="Aantal">
+                    <button type="button" class="buy-btn">Koop</button>
+                    <button type="button" class="sell-btn">Verkoop</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.techniekcollegerotterdam.nl">Techniek College Rotterdam</a>
+    </footer></body>
+</html>

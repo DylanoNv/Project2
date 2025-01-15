@@ -159,3 +159,34 @@ window.onload = function () {
     populateDropdowns();
     toonRekeningen();
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    const buyButtons = document.querySelectorAll('.buy-btn');
+    const sellButtons = document.querySelectorAll('.sell-btn');
+
+    buyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const quantityInput = button.closest('form').querySelector('input');
+            const quantity = parseInt(quantityInput.value) || 0;
+            if (quantity > 0) {
+                alert(`Je hebt ${quantity} aandelen gekocht!`);
+                quantityInput.value = '';
+            } else {
+                alert('Voer een geldig aantal in.');
+            }
+        });
+    });
+
+    sellButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const quantityInput = button.closest('form').querySelector('input');
+            const quantity = parseInt(quantityInput.value) || 0;
+            if (quantity > 0) {
+                alert(`Je hebt ${quantity} aandelen verkocht!`);
+                quantityInput.value = '';
+            } else {
+                alert('Voer een geldig aantal in.');
+            }
+        });
+    });
+});
